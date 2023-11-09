@@ -39,7 +39,9 @@ jobs:
           unzip $FONT_PATCHER
 
       - name: Patch font
-        run: ./$FONT_FORGE -script $PWD/font-patcher $PWD/$FONT_FILE -out ./patched-font
+        run: |
+          mkdir patched-font
+          ./$FONT_FORGE -script $PWD/font-patcher $PWD/$FONT_FILE -out $PWD/patched-font
 
       - name: Upload patched font
         uses: actions/upload-artifact@v3
