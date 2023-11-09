@@ -18,6 +18,11 @@ jobs:
           wget $FONT_FORGE_URL -O $FONT_FORGE
           chmod u+x $FONT_FORGE
 
+      - name: Install FUSE for AppImage
+        run: |
+          sudo add-apt-repository universe
+          sudo apt install libfuse2
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
