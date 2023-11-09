@@ -36,7 +36,7 @@ jobs:
       - name: Patch font
         run: |
           mkdir patched-font
-          ./$FONT_FORGE -script $PWD/font-patcher $PWD/$FONT_FILE -out $PWD/patched-font
+          ./$FONT_FORGE -script $PWD/font-patcher $PWD/$FONT_FILE -out $PWD/patched-font --complete
 
       - name: Upload patched font
         uses: actions/upload-artifact@v3
